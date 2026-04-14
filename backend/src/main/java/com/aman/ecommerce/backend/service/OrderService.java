@@ -28,49 +28,34 @@ public class OrderService {
     }
 
     public Order placeOrder(Long userId) {
-
-        // 1. Get cart
         Cart cart = cartRepo.findByUserId(userId);
         if (cart == null) {
             throw new RuntimeException("Cart is empty");
         }
-
         List<CartItem> items = itemRepo.findByCartId(cart.getId());
-
         if (items.isEmpty()) {
             throw new RuntimeException("Cart is empty");
         }
-
-        // 2. Create order
         Order order = new Order();
         order.setUserId(userId);
         order.setStatus("CREATED");
-
         double total = 0;
-
         order = orderRepo.save(order);
 
-        // 3. Process each item
         for (CartItem cartItem : items) {
 
             ProductVariant variant = cartItem.getVariant();
-
-            // 🔥 Check stock again
             if (variant.getStock() < cartItem.getQuantity()) {
                 throw new RuntimeException("Stock issue for variant id: " + variant.getId());
             }
-
-            // 🔥 Reduce stock
             variant.setStock(variant.getStock() - cartItem.getQuantity());
             variantRepo.save(variant);
 
-            // 🔥 Create OrderItem
             OrderItem orderItem = new OrderItem();
             orderItem.setOrder(order);
             orderItem.setVariant(variant);
             orderItem.setQuantity(cartItem.getQuantity());
 
-            // IMPORTANT: snapshot price
             double price = variant.getProduct().getPrice();
             orderItem.setPrice(price);
 
@@ -78,12 +63,8 @@ public class OrderService {
 
             orderItemRepo.save(orderItem);
         }
-
-        // 4. Set total
         order.setTotalAmount(total);
         orderRepo.save(order);
-
-        // 5. Clear cart
         itemRepo.deleteAll(items);
 
         return order;
