@@ -1,7 +1,6 @@
 # 🛒 ZenkaiX — Full Stack eCommerce Platform
 
-A full-stack eCommerce web application built using modern Java technologies.  
-Focused on clean architecture, scalability, and real-world backend workflows.
+A full-stack eCommerce application built using modern Java technologies, focused on clean architecture, scalability, and real-world backend workflows.
 
 ---
 
@@ -18,7 +17,8 @@ Focused on clean architecture, scalability, and real-world backend workflows.
 - 🧱 Layered Architecture (Controller → Service → Repository)  
 - 🛒 Complete Cart & Order Management System  
 - 📦 Order Placement Flow with real-time stock updates  
-- 🌐 RESTful APIs following best practices  
+- 🔄 Transaction-safe order processing  
+- 🌐 RESTful APIs following industry best practices  
 - ⚡ Built with modern Java (Java 21)
 
 ---
@@ -72,7 +72,7 @@ ecommerce-project/
 │   ├── repository/    
 │   ├── model/         
 │   ├── config/        
-│   ├── dto/           # (Planned for better architecture)
+│   ├── dto/           # Planned (for cleaner architecture)
 │   ├── exception/     
 │
 ├── frontend/
@@ -102,24 +102,24 @@ ecommerce-project/
 
 ## 🔄 Order Flow
 
-Cart → Order → Order Items
+Cart → Order → Order Items  
 
 - Validates cart & items  
 - Checks stock availability  
 - Updates inventory in real-time  
 - Converts cart items into order items  
-- Stores everything in database  
+- Stores everything in the database  
 
 ---
 
 ## 🔌 API Endpoints (Sample)
 
-| Method | Endpoint            | Description         |
-|--------|--------------------|---------------------|
-| GET    | /api/products      | Get all products    |
-| POST   | /api/products      | Add product         |
-| GET    | /api/products/{id}| Get product by ID   |
-| DELETE | /api/products/{id}| Delete product      |
+| Method | Endpoint             | Description         |
+|--------|---------------------|---------------------|
+| GET    | /api/products       | Get all products    |
+| POST   | /api/products       | Add product         |
+| GET    | /api/products/{id} | Get product by ID   |
+| DELETE | /api/products/{id} | Delete product      |
 
 ---
 
@@ -170,7 +170,7 @@ _Add screenshots after frontend is ready_
 - ⭐ Product Reviews & Ratings  
 - 🔍 Advanced Search & Filters  
 - 📧 Email Notifications  
-- 🧩 DTO Layer for cleaner architecture & scalability  
+- 🧩 DTO Layer for better abstraction & maintainability  
 
 ---
 
@@ -180,7 +180,7 @@ _Add screenshots after frontend is ready_
 - Implementing real-world order workflows  
 - Managing data consistency & transactions  
 - Structuring layered architecture  
-- Working with Git & GitHub for version control  
+- Using Git & GitHub for version control  
 
 ---
 
