@@ -1,55 +1,53 @@
 # 🛒 ZenkaiX — Full Stack eCommerce Platform
 
-> A production-ready eCommerce web application built with modern Java full-stack technologies, featuring secure authentication, scalable backend architecture, and responsive frontend UI.
+A full-stack eCommerce web application built using modern Java technologies.  
+Focused on clean architecture, scalability, and real-world backend workflows.
 
 ---
 
 ## 🚀 Live Demo
 
-* 🌐 Frontend: *Coming Soon*
-* ⚙️ Backend API: *Coming Soon*
+🌐 Frontend: Coming Soon  
+⚙️ Backend API: Coming Soon  
 
 ---
 
 ## 📌 Key Highlights
 
-* 🔐 Secure Authentication using JWT
-* 🧱 Layered Architecture (Controller → Service → Repository)
-* 🛒 Complete Cart & Order Management System
-* 👨‍💼 Admin Dashboard for Product Control
-* 🌐 RESTful APIs following industry standards
-* ⚡ Optimized performance with modern Java (Java 21)
+- 🔐 Secure Authentication using JWT  
+- 🧱 Layered Architecture (Controller → Service → Repository)  
+- 🛒 Complete Cart & Order Management System  
+- 📦 Order Placement Flow with real-time stock updates  
+- 🌐 RESTful APIs following best practices  
+- ⚡ Built with modern Java (Java 21)
 
 ---
 
 ## 🧑‍💻 Tech Stack
 
 ### Backend
+- Java 21  
+- Spring Boot  
+- Spring Security + JWT  
+- Spring Data JPA (Hibernate)  
+- MySQL  
 
-* Java 21
-* Spring Boot
-* Spring Security + JWT
-* Spring Data JPA (Hibernate)
-* MySQL
-
-### Frontend
-
-* React.js
-* Axios
-* CSS / Tailwind (optional)
+### Frontend (Planned / In Progress)
+- React.js  
+- Axios  
+- Tailwind CSS  
 
 ### Dev Tools
-
-* Git & GitHub
-* Maven
-* Postman
-* IntelliJ IDEA
+- Git & GitHub  
+- Maven  
+- Postman  
+- IntelliJ IDEA  
 
 ---
 
 ## 🏗️ System Architecture
 
-```id="arch123"
+```
 Client (React)
      ↓
 REST API (Spring Boot)
@@ -65,17 +63,17 @@ MySQL Database
 
 ## 📂 Project Structure
 
-```id="struct456"
+```
 ecommerce-project/
 │
 ├── backend/
-│   ├── controller/    # API endpoints
-│   ├── service/       # Business logic
-│   ├── repository/    # Database access
-│   ├── model/         # Entity classes
-│   ├── config/        # Security & config
-│   ├── dto/           # Data transfer objects
-│   ├── exception/     # Global error handling
+│   ├── controller/    
+│   ├── service/       
+│   ├── repository/    
+│   ├── model/         
+│   ├── config/        
+│   ├── dto/           # (Planned for better architecture)
+│   ├── exception/     
 │
 ├── frontend/
 │   ├── components/
@@ -89,29 +87,39 @@ ecommerce-project/
 ## 🔥 Core Features
 
 ### 👤 User
-
-* Register & Login (JWT-based)
-* Browse & search products
-* Add to cart
-* Place orders
-* View order history
+- Register & Login (JWT-based)  
+- Browse products  
+- Add to cart  
+- Place orders  
+- View order history  
 
 ### 👨‍💼 Admin
-
-* Add / Update / Delete products
-* Manage inventory
-* View all orders
+- Add / Update / Delete products  
+- Manage inventory  
+- View all orders  
 
 ---
 
-## 🔌 API Endpoints
+## 🔄 Order Flow
 
-| Method | Endpoint             | Description       |
-| ------ | -------------------- | ----------------- |
-| GET    | `/api/products`      | Get all products  |
-| POST   | `/api/products`      | Add product       |
-| GET    | `/api/products/{id}` | Get product by ID |
-| DELETE | `/api/products/{id}` | Delete product    |
+Cart → Order → Order Items
+
+- Validates cart & items  
+- Checks stock availability  
+- Updates inventory in real-time  
+- Converts cart items into order items  
+- Stores everything in database  
+
+---
+
+## 🔌 API Endpoints (Sample)
+
+| Method | Endpoint            | Description         |
+|--------|--------------------|---------------------|
+| GET    | /api/products      | Get all products    |
+| POST   | /api/products      | Add product         |
+| GET    | /api/products/{id}| Get product by ID   |
+| DELETE | /api/products/{id}| Delete product      |
 
 ---
 
@@ -119,14 +127,14 @@ ecommerce-project/
 
 ### 🔧 Backend
 
-```id="setup1"
-git clone https://github.com/YOUR_USERNAME/ecommerce-project.git
+```bash
+git clone https://github.com/Aman-Yati/ZenkaiX.git
 cd backend
 ```
 
 Configure database in `application.properties`
 
-```id="setup2"
+```bash
 mvn spring-boot:run
 ```
 
@@ -134,7 +142,7 @@ mvn spring-boot:run
 
 ### 🌐 Frontend
 
-```id="setup3"
+```bash
 cd frontend
 npm install
 npm run dev
@@ -144,40 +152,42 @@ npm run dev
 
 ## 📸 Screenshots
 
-> Add UI screenshots here after frontend completion
+_Add screenshots after frontend is ready_
 
 ---
 
 ## 🌍 Deployment (Planned)
 
-* Backend: Render / Railway
-* Frontend: Vercel
+- Backend: Render / Railway  
+- Frontend: Vercel  
 
 ---
 
 ## 📈 Future Enhancements
 
-* 💳 Payment Gateway Integration (Razorpay/Stripe)
-* ❤️ Wishlist System
-* ⭐ Product Reviews & Ratings
-* 🔍 Advanced Search & Filters
-* 📧 Email Notifications
+- 💳 Payment Integration (Razorpay / Stripe)  
+- ❤️ Wishlist System  
+- ⭐ Product Reviews & Ratings  
+- 🔍 Advanced Search & Filters  
+- 📧 Email Notifications  
+- 🧩 DTO Layer for cleaner architecture & scalability  
 
 ---
 
 ## 🧠 What I Learned
 
-* Building scalable REST APIs
-* Implementing secure authentication (JWT)
-* Designing database relationships
-* Integrating frontend with backend
-* Deploying full-stack applications
+- Designing scalable backend systems  
+- Implementing real-world order workflows  
+- Managing data consistency & transactions  
+- Structuring layered architecture  
+- Working with Git & GitHub for version control  
 
 ---
 
 ## 👨‍💼 Author
 
-**Aman Yati**
+**Aman Yati**  
+Aspiring Java Backend Developer  
 
 ---
 
