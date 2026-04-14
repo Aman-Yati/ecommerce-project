@@ -26,11 +26,11 @@ public class ProductVariantService {
                 .orElseThrow(() -> new RuntimeException("Product not found"));
 
         variant.setProduct(product);
-
         return repo.save(variant);
     }
 
     public List<ProductVariant> getAll() {
+
         return repo.findAll();
     }
 }
